@@ -1,13 +1,18 @@
 <?php
-$query = $mysqli -> query("SELECT * FROM `bands` ORDER BY RAND() LIMIT 10");
-$result = $mysqli -> query($query);
+    $query = "SELECT * FROM musicdb.bands ORDER BY RAND() LIMIT 6";
+    $exec = $pdo->query($query);    
+    $data = $exec -> fetchAll();
 
-if ($result -> num_rows > 0) {
-    while($row = $result -> fetch_assoc()) {
-        echo "<br> id: ". $row["id"]. " - Name: ". $row["name"]. " " . $row["lastname"] . "<br>";
+    foreach($data as $row){
+        echo "-Name: " . $row['name'] . "-Formed: " . $row['formed'] . "</br>";
     }
-} else {
-    echo "0 results";
-}
+
+
+// $query = $pdo->query("SELECT * FROM `bands` ORDER BY RAND() LIMIT 6");
+
+// while($row = $query -> fetch()) {
+//     echo "<br> id: ". $row["id"]. " - Name: ". $row["name"]. " " . "- Year: " . $row["formed"] . "<br>";
+// }
 
 ?>
+Bands

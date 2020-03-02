@@ -24,6 +24,14 @@ if ($page == "") {
 
 			$page_load = "bands";
 			
+		} else if ($uriParts[0] == "albums") {
+
+			$page_load = "albums";
+			
+		} else if ($uriParts[0] == "songs") {
+
+			$page_load = "songs";
+			
 		} else {
 
             header('Location: /');

@@ -16,6 +16,7 @@ require('include/services/router.php');
 		<meta charset="utf-8" />
 		<meta name="viewport" content="initial-scale=1, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
+
 	</head>
 
 	<body>
@@ -26,7 +27,7 @@ require('include/services/router.php');
 		    <?php require_once('include/partials/header.php'); ?>
 
 			<main class="main">
-				<?php require_once('include/pages/'. $page_load . '.php'); ?>
+				<?php require('include/pages/'. $page_load . '.php'); ?>
 			</main>
 
 		    <?php require_once('include/partials/footer.php'); ?>
@@ -36,4 +37,4 @@ require('include/services/router.php');
 
 	</body>
 
-</html><?php $mysqli->close(); ?>
+</html><?php $pdo = null; ?>

@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #181818;
+    color: #cabdbd;
+}
+
+ul, ol {
+    list-style-type: none;
+}
