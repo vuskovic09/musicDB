@@ -16,9 +16,9 @@ if ($page == "") {
 
 	if (count($uriParts) == 1) {
 
-		if ($uriParts[0] == "login") {
+		if ($uriParts[0] == "loginreg") {
 
-			$page_load = "login";
+			$page_load = "loginreg";
 
 		} else if ($uriParts[0] == "bands") {
 
@@ -63,7 +63,7 @@ if ($page == "") {
 
 		if ($uriParts[0] == "band") {
 
-			$page_load = "songs";
+			$page_load = "albums";
 
 		} else if ($uriParts[0] == "user") {
 
@@ -76,6 +76,20 @@ if ($page == "") {
 
 		}
 
+	}
+
+	if (count($uriParts) == 4) {
+
+		if($uriParts[0] == "band") {
+
+			$page_load = "songs";
+
+		} else {
+
+			header('Location: /');
+			exit;
+
+		}
 	}
 
 }

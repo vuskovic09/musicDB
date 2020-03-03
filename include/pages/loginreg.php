@@ -1,6 +1,5 @@
 <div class="register">
     <h1>REGISTER</h1>
-    <!-- ERRORS ON REGISTRATION.PHP -->
     <?php 
         if(isset($_SESSION['errors'])){
             foreach($_SESSION['errors'] as $error){
