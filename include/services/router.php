@@ -16,9 +16,17 @@ if ($page == "") {
 
 	if (count($uriParts) == 1) {
 
-		if ($uriParts[0] == "loginreg") {
+		if ($uriParts[0] == "login") {
 
-			$page_load = "loginreg";
+			$page_load = "login";
+
+		} else if ($uriParts[0] == "logout") {
+
+			$page_load = "logout";
+
+		} else if ($uriParts[0] == "registration") {
+
+			$page_load = "registration";
 
 		} else if ($uriParts[0] == "bands") {
 
@@ -34,7 +42,7 @@ if ($page == "") {
 			
 		} else {
 
-            header('Location: /');
+			header('Location: '.$path);
             exit;
 
 		}
@@ -53,7 +61,7 @@ if ($page == "") {
 
 		} else {
 
-            header('Location: /');
+            header('Location: '.$path);
             exit;
 
 		}
@@ -71,9 +79,8 @@ if ($page == "") {
 
 		} else {
 
-            header('Location: /');
+            header('Location: '.$path);
             exit;
-
 		}
 
 	}
@@ -86,8 +93,8 @@ if ($page == "") {
 
 		} else {
 
-			header('Location: /');
-			exit;
+			header('Location: '.$path);
+            exit;
 
 		}
 	}

@@ -1,19 +1,19 @@
+<?php
+    if(isset($_SESSION['loggedUserName']) && !empty($_SESSION['loggedUserName'])) {
+        header('Location: '.$path);
+        exit;
+    }
+
+?>
+
+<?php if(count($errors) > 0) { ?>
+<div class="errors">
+
+</div>
+<?php ?>
+
 <div class="register">
     <h1>REGISTER</h1>
-    <?php 
-        if(isset($_SESSION['errors'])){
-            foreach($_SESSION['errors'] as $error){
-                echo $error . "</br>";
-            }
-            unset($_SESSION['errors']);
-        }
-
-        if(isset($_SESSION['success'])){
-            echo $_SESSION['success'];
-            unset($_SESSION['success']);
-        }
-    
-    ?>
     <form action="logic/register.php" method="POST" onSubmit="return check();">
         <input type="text" name="username" placeholder="Username" />
         <input type="text" name="email" placeholder="E-Mail" />
@@ -60,14 +60,4 @@
             return true;
         }
     </script>
-</div>
-
-
-<div class="login">
-    <h1>LOGIN</h1>
-    <form action="logic/logging.php" method="POST">
-        <input type="text" name="email" placeholder="E-Mail" />
-        <input type="password" name="pass" placeholder="Password" />
-        <input type="submit" name="btn-login" value="Login" />
-    </form>   
 </div>

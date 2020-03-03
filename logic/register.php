@@ -13,6 +13,7 @@ if(isset($_POST['btn-register'])){
 
     $errors = [];
 
+    //VALIDATION
     if(!preg_match($regexName, $name)){
         $errors[] = "Name not ok";
     }
@@ -29,11 +30,9 @@ if(isset($_POST['btn-register'])){
         $errors[] = "Passwords do not match";
     }
 
-    var_dump($errors);
-
+    //INSERT
     if(count($errors) == 0) {
-        require "../include/services/connection.php";
-        $query = "INSERT INTO users VALUES (NULL, :username, :email, :password, :active, :created)";
+        $query = "INSERT INTO `users` (`id`, `username`, `email`, `password`, `active`, `created`) VALUES (NULL, :username, :email, :password, '', current_timestamp())";
         
         $prepare = $pdo->prepare($query);
         $prepare->bindParam(":username", $name);
@@ -42,18 +41,14 @@ if(isset($_POST['btn-register'])){
         $pass = md5($pass);
         $prepare->bindParam(":password", $pass);
 
-        $active = 0;
-        $prepare->bindParam(":active", $active);
-
-        $date = date("Y-m-d H:i:s");
-        $prepare->bindParam(":created", $date);
-
         try {
             $execute = $prepare->execute();
             $_SESSION['success'] = "Successful registration!";
-
+            header('Location: '.$path);
+            exit;
         } catch(PDOException $ex) {            
             $_SESSION['errors'] = ["Email already registered."];
+            var_dump($_SESSION['errors']);
         }
         
 
