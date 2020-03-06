@@ -1,7 +1,6 @@
 <?php
 
 global  $uriParts, $page_load;
-// get page
 $requestUri = $_SERVER['REQUEST_URI'];
 $page = str_ireplace('/musicDB/', '', $requestUri);
 $uriParts = explode('/', $page);

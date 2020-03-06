@@ -18,7 +18,7 @@ require('include/services/router.php');
 		<meta charset="utf-8" />
 		<meta name="viewport" content="initial-scale=1, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-
+		<link rel="stylesheet" type="text/css" href="include/css/style.css" />
 	</head>
 
 	<body>
