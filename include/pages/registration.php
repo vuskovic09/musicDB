@@ -1,7 +1,9 @@
 <?php
     if(isset($_SESSION['loggedUserName']) && !empty($_SESSION['loggedUserName'])) {
+        
         header('Location: '.$path);
         exit;
+
     } else if(isset($_POST['btn-register'])){
 
         $name = $_POST['username'];

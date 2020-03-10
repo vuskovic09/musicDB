@@ -50,7 +50,7 @@ if ($page == "") {
 
 	if (count($uriParts) == 2) {
 
-		if ($uriParts[0] == "band") {
+		if ($uriParts[0] == "bands") {
 
 			$page_load = "albums";
 
@@ -68,7 +68,7 @@ if ($page == "") {
 
 	if (count($uriParts) == 3) {
 
-		if ($uriParts[0] == "band") {
+		if ($uriParts[0] == "bands") {
 
 			$page_load = "albums";
 
@@ -86,7 +86,7 @@ if ($page == "") {
 
 	if (count($uriParts) == 4) {
 
-		if($uriParts[0] == "band") {
+		if($uriParts[0] == "bands") {
 
 			$page_load = "songs";
 

@@ -5,6 +5,6 @@
 	$password = "";
 	$database = "musicdb";
 
-   $path = '/musicdb';
+   	$path = '/musicdb';
 
 ?>

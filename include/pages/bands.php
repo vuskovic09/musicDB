@@ -7,4 +7,3 @@
         echo "-Name: " . $row['name'] . " -Formed: " . $row['formed'] . "</br>";
     }
 ?>
-Bands

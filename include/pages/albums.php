@@ -1,20 +1,24 @@
 <?php
     $slug = basename($requestUri);
 
-    $queryAlbums = "SELECT `bands`.`slug`, `albums`.`title`, `albums`.`year`, `bands`.`name`
+    $queryAlbums = "SELECT *
                     FROM `albums`
-                    LEFT JOIN `songs` ON `songs`.`album_id` = `albums`.`id`
-                    LEFT JOIN `bands` ON `songs`.`band_id` = `bands`.`id`
+                    LEFT JOIN `bands` ON `albums`.`band_id` = `bands`.`id`
                     GROUP BY `albums`.`title`
                     ORDER BY `albums`.`year`";
     $execAlbums = $pdo->query($queryAlbums);    
     $dataAlbums = $execAlbums -> fetchAll();
-
-    foreach($dataAlbums as $row){
-        if($slug == $row['slug']){
-            echo "-Title: " . $row['title'] . " -Released: " . $row['year'] . "</br>";
-        }
-    }
 ?>
 
-albums
+<div class="band-albums">
+
+    <?php foreach($dataAlbums as $row){ 
+            if($slug == $row['slug']){?>
+                <div class="home-albums-card">
+                    <a href="<?php echo $path . '/bands/' . $row['slug'] . '/' . $row['album_slug']; ?>" class="band-img" style="background-image: url(<?php echo $row['image'] ?>)"></a>
+                    <h3><?php echo($row['title']); ?></h3>
+                    <p><?php echo($row['year']); ?></p>
+                </div>
+    <?php } }?>
+
+    </div>
