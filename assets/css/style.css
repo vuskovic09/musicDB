@@ -12,6 +12,7 @@ a {
 body {
     background: #3a3a3a;
     color: #cabdbd;
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 }
 
 ul, ol {
@@ -66,8 +67,16 @@ ul li {
     font-size: 18px;
 }
 
+.home {
+    padding: 20px 0;
+}
+
 .home .container {
+    border-radius: 8px;
+    box-shadow: inset 5px 5px 20px #282828, inset -5px -5px 20px #4c4c4c;
     flex-direction: column;
+    margin-bottom: 55px;
+    padding: 50px;
 }
 
 .home-bands, .home-albums {
@@ -76,8 +85,18 @@ ul li {
     font-size: 14px;
     justify-content: space-around;
     justify-items: center;
-    margin-top: 25px;
     width: 100%;
+}
+
+.article-title {
+    color: #282828;
+    font-size: 92px;
+    letter-spacing: .1em;
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+    text-shadow: -1px -1px 1px #282828, 2px 2px 1px #4c4c4c;
 }
 
 .home-bands-card, .home-albums-card {
@@ -109,6 +128,7 @@ ul li {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 8px;
     display: block;
 
     padding-bottom: 100%;
