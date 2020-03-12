@@ -20,6 +20,7 @@ require('include/partials/favorites.php');
 		<meta name="viewport" content="initial-scale=1, width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<base href="<?php echo $path ?> /" />
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+		<script src="https://kit.fontawesome.com/4a11d37dc0.js" crossorigin="anonymous"></script>
 	</head>
 
 	<body>

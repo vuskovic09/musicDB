@@ -12,7 +12,7 @@
 
 <div class="home">
 
-    <h1 class="article-title">Bands</h1>
+    <h1 class="article-title">Top Bands</h1>
 
     <div class="container">
         <div class="home-bands">
@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    <h1 class="article-title">Albums</h1>
+    <h1 class="article-title">Top Albums</h1>
 
     <div class="container">
 

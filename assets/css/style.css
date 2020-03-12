@@ -35,7 +35,7 @@ ul li {
     background: linear-gradient(145deg, #3e3e3e, #343434);
     box-shadow: 5px 5px 20px #282828, -5px -5px 20px #4c4c4c;
     height: 120px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .header-logo {
@@ -67,11 +67,11 @@ ul li {
     font-size: 18px;
 }
 
-.home {
+.content {
     padding: 20px 0;
 }
 
-.home .container {
+.content .container {
     border-radius: 8px;
     box-shadow: inset 5px 5px 20px #282828, inset -5px -5px 20px #4c4c4c;
     flex-direction: column;
@@ -85,6 +85,7 @@ ul li {
     font-size: 14px;
     justify-content: space-around;
     justify-items: center;
+    padding: 20px;
     width: 100%;
 }
 
@@ -102,8 +103,9 @@ ul li {
 .home-bands-card, .home-albums-card {
     background: linear-gradient(145deg, #3e3e3e, #343434);
     border-radius: 8px;
-    box-shadow: 5px 5px 20px #282828, -5px -5px 20px #4c4c4c;
+    box-shadow: 5px 5px 20px #282828, -5px -5px 20px #383838;
     flex-basis: 150px;
+    margin: 10px;
     padding: 10px;
     position: relative;
     text-align: center;
@@ -132,4 +134,187 @@ ul li {
     display: block;
 
     padding-bottom: 100%;
+}
+
+/* FOOTER */
+.footer-distributed {
+    background: linear-gradient(145deg, #3e3e3e, #343434);
+    box-shadow: -5px -5px 20px #4c4c4c, 5px 5px 20px #282828;
+	box-sizing: border-box;
+	font: 16px sans-serif;
+	overflow: hidden;
+	padding: 50px 60px 40px;
+	text-align: left;
+	width: 100%;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left {
+	float: left;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links {
+	color:  #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a {
+	color: inherit;
+	display: inline-block;
+	line-height: 1.8;
+}
+
+.footer-distributed .footer-company-name {
+	color:  #8f9296;
+	font-size: 14px;
+	margin: 0;
+}
+
+/* Footer social icons */
+
+.footer-distributed .footer-icons {
+	margin-top: 40px;
+}
+
+.footer-distributed .footer-icons a {
+	background-color:  #33383b;
+	border-radius: 8px;
+	color: #ffffff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 20px;
+	height: 35px;
+	line-height: 35px;
+	margin-right: 3px;
+	margin-bottom: 5px;
+    text-align: center;
+    width: 35px;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+	float: right;
+}
+
+.footer-distributed .footer-right p {
+	display: inline-block;
+	margin: 15px 42px 0 0;
+	color: #ffffff;
+}
+
+/* The contact form */
+
+.footer-distributed form {
+	display: inline-block;
+}
+
+.footer-distributed form input,
+.footer-distributed form textarea {
+	display: block;
+	border-radius: 3px;
+	box-sizing: border-box;
+	background-color:  #1f2022;
+	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+	border: none;
+	resize: none;
+
+	font: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	color:  #d1d2d2;
+
+	width: 400px;
+	padding: 18px;
+}
+
+.footer-distributed ::-webkit-input-placeholder {
+	color:  #5c666b;
+}
+
+.footer-distributed ::-moz-placeholder {
+	color:  #5c666b;
+	opacity: 1;
+}
+
+.footer-distributed :-ms-input-placeholder{
+	color:  #5c666b;
+}
+
+
+.footer-distributed form input{
+	height: 55px;
+	margin-bottom: 15px;
+}
+
+.footer-distributed form textarea{
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.footer-distributed form button{
+	border-radius: 3px;
+	background-color:  #33383b;
+	color: #ffffff;
+	border: 0;
+	padding: 15px 50px;
+	font-weight: bold;
+	float: right;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 1000px) {
+
+	.footer-distributed {
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-company-name{
+		font-size: 12px;
+	}
+
+	.footer-distributed form input,
+	.footer-distributed form textarea{
+		width: 250px;
+	}
+
+	.footer-distributed form button{
+		padding: 10px 35px;
+	}
+
+}
+
+@media (max-width: 800px) {
+
+	.footer-distributed{
+		padding: 30px;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		float: none;
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+	.footer-distributed .footer-left{
+		margin-bottom: 40px;
+	}
+
+	.footer-distributed form{
+		margin-top: 30px;
+	}
+
+	.footer-distributed form{
+		display: block;
+	}
+
+	.footer-distributed form button{
+		float: none;
+	}
 }
