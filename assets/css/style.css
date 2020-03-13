@@ -25,7 +25,7 @@ ul li {
 
 .container {
     display: flex;
-    justify-items: center;
+    align-items: center;
     justify-content: space-between;
     margin: 0 auto;
     width: 85%;
@@ -84,7 +84,7 @@ ul li {
     flex-wrap: wrap;
     font-size: 14px;
     justify-content: space-around;
-    justify-items: center;
+    align-items: center;
     padding: 20px;
     width: 100%;
 }

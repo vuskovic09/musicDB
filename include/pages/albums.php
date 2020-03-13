@@ -30,6 +30,18 @@
             <?php }} ?>
                 </div>
             </div>
-        <?php }} ?>
-       
+    <?php } } else {?>
+        <h3 class="article-title"><?php echo str_replace("-", " ", $slug); ?></h3>
+        <div class="container">
+            <div class="home-bands">
+            <?php foreach($dataAlbums as $rowAlbums) {
+                if($slug == $rowAlbums['slug']){?>
+                <div class="home-albums-card">
+                    <a href="<?php echo $path . '/bands/' . $rowAlbums['slug'] . '/' . $rowAlbums['album_slug']; ?>" class="band-img" style="background-image: url(<?php echo $rowAlbums['image'] ?>)"></a>
+                    <h3><?php echo($rowAlbums['title']); ?></h3>
+                    <p><?php echo($rowAlbums['year']); ?></p>
+                </div> 
+        <?php }}} ?>
+        </div>
+    </div>
 </div>

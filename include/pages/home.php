@@ -10,7 +10,7 @@
     $dataAlbums = $execAlbums -> fetchAll();
 ?>
 
-<div class="home">
+<div class="content">
 
     <h1 class="article-title">Top Bands</h1>
 
