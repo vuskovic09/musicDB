@@ -79,7 +79,7 @@ ul li {
     padding: 20px;
 }
 
-.home-bands, .home-albums {
+.article {
     display: flex;
     flex-wrap: wrap;
     font-size: 14px;
@@ -100,7 +100,7 @@ ul li {
     text-shadow: -1px -1px 1px #282828, 2px 2px 1px #4c4c4c;
 }
 
-.home-bands-card, .home-albums-card {
+.article-card {
     background: linear-gradient(145deg, #3e3e3e, #343434);
     border-radius: 8px;
     box-shadow: 5px 5px 20px #282828, -5px -5px 20px #383838;
@@ -135,6 +135,70 @@ ul li {
 
     padding-bottom: 100%;
 }
+
+.container.reg {
+	width: 30%;
+}
+
+label {
+	display: block;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+input[type="submit"], input {
+	border: 0;
+	outline: 0;
+	font-size: 18px;
+	border-radius: 20px;
+	padding: 10px;
+	background-color: #3a3a3a;
+	box-shadow: -5px -5px 10px #383838,  5px 5px 10px #282828;
+	color: #cabdbd;
+	cursor: pointer;
+	display: block;
+	font-weight: bold;
+	transition: all 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+	box-shadow: -2px -2px 5px #383838, 2px 2px 5px #282828;
+}
+
+input[type="submit"]:active {
+	box-shadow: inset 1px 1px 2px #282828, inset -1px -1px 2px #383838;
+}
+
+input {
+	box-shadow:  inset 2px 2px 5px #383838, inset -5px -5px 10px #282828;
+	margin-right: 8px;
+	transition: all 0.2s ease-in-out;
+	color: #cabdbd;
+	margin-right: 5px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+input:focus {
+	box-shadow:  inset 1px 1px 2px #383838, inset -1px -1px 2px #282828;
+}
+
+input::placeholder {
+	transition: 0.2s ease-in-out;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	font-size: 20px;
+  }
+  th, td {
+	padding: 0.25rem;
+	text-align: center;
+  }
+  tbody tr:nth-child(odd) {
+	background: #343434;
+  }
 
 /* FOOTER */
 .footer-distributed {

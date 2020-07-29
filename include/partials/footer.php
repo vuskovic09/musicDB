@@ -1,3 +1,25 @@
+<?php 
+if(isset($_POST['btn-msg'])){
+
+    $msgName = $_POST['name'];
+    $msgText = $_POST['message'];
+    
+    $query = "INSERT INTO `messages` (`id`, `username`, `message`) VALUES (NULL, :username, :message)";
+            
+    $prepare = $pdo->prepare($query);
+    $prepare->bindParam(":username", $msgName);
+    $prepare->bindParam(":message", $msgText);
+
+    try {
+        $execute = $prepare->execute();
+    } catch(PDOException $ex) {
+        $_SESSION['errors'] = ['Something went wrong.'];
+    }
+}
+
+
+?>
+
 <footer class="footer-distributed">
 
     <div class="footer-left">
@@ -29,14 +51,14 @@
 
     <div class="footer-right">
 
-        <p>Contact Us</p>
-
-        <form action="#" method="post">
-            <input type="text" name="email" placeholder="Email">
-            <textarea name="message" placeholder="Message"></textarea>
-            <button>Send</button>
-        </form>
-
+<?php if(isset($_SESSION['loggedUserName']) && !empty($_SESSION['loggedUserName'])) { ?>
+    <p>Contact the administrators</p>   
+    <form action="" method="POST" onSubmit="return check()">
+        <label><input type="text" name="name" placeholder="Your Name"></label>
+        <label><textarea name="message" placeholder="Message"></textarea></label>
+        <label><input type="submit" name="btn-msg" value="Send Message" /></label>
+    </form>
+<?php } ?>
     </div>
 
 </footer>

@@ -1,4 +1,8 @@
 <?php
+    $userQuery = "SELECT `username`, `email` FROM `users`";
+    $execUser = $pdo->query($userQuery);
+    $dataUser = $execUser -> fetchAll();
+
     if(isset($_SESSION['loggedUserName']) && !empty($_SESSION['loggedUserName'])) {
         
         header('Location: '.$path);
@@ -17,6 +21,16 @@
         $errors = [];
     
         //VALIDATION
+        foreach ($dataUser as $row) {
+            if($name == $row['username']){
+                $errors[] = "Username already exists.";
+            }
+            
+            if ($email == $row['email']){
+                $errors[] = "Email already in use.";
+            }
+        }
+        
         if(!preg_match($regexName, $name)){
             $errors[] = "Name not ok";
         }
@@ -47,6 +61,12 @@
             try {
                 $execute = $prepare->execute();
                 $_SESSION['success'] = "Successful registration!";
+
+                session_start();
+
+                $_SESSION['loggedUserName'] = $username;
+                $_SESSION['loggedUserId'] = $user['id'];
+                $_SESSION['loggedUserRole'] = $user['role'];
                 header('Location: '.$path);
                 exit;
             } catch(PDOException $ex) {            
@@ -66,15 +86,19 @@
     }
 ?>
 
-<div class="register">
-    <h1>REGISTER</h1>
-    <form action="" method="POST" onSubmit="return check();">
-        <input type="text" name="username" placeholder="Username" />
-        <input type="text" name="email" placeholder="E-Mail" />
-        <input type="password" name="pass" placeholder="Password" />
-        <input type="password" name="confirm-pass" placeholder="Confirm Password" />
-        <input type="submit" name="btn-register" value="Register" />
-    </form> 
+<div class="content register">
+    <h1 class="article-title">REGISTER</h1>
+    <div class="container reg">
+        <div class="article">
+            <form action="" method="POST" onSubmit="return check();">
+                <label><input type="text" name="username" placeholder="Username" /></label>
+                <label><input type="text" name="email" placeholder="E-Mail" /></label>
+                <label><input type="password" name="pass" placeholder="Password" /></label>
+                <label><input type="password" name="confirm-pass" placeholder="Confirm Password" /></label>
+                <label><input type="submit" name="btn-register" value="Register" />
+            </form>
+        </div>
+    </div>
 </div>
 
 <!-- <script>

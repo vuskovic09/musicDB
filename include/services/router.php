@@ -23,6 +23,22 @@ if ($page == "") {
 
 			$page_load = "logout";
 
+		} else if ($uriParts[0] == "delete") {
+
+			$page_load = "delete";
+
+		} else if ($uriParts[0] == "edit") {
+
+			$page_load = "edit";
+
+		} else if ($uriParts[0] == "adminPanel") {
+
+			$page_load = "adminPanel";
+
+		} else if ($uriParts[0] == "profile") {
+
+			$page_load = "profile";
+
 		} else if ($uriParts[0] == "registration") {
 
 			$page_load = "registration";
@@ -70,7 +86,7 @@ if ($page == "") {
 
 		if ($uriParts[0] == "bands") {
 
-			$page_load = "albums";
+			$page_load = "songs";
 
 		} else if ($uriParts[0] == "user") {
 
